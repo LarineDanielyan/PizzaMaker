@@ -1,16 +1,16 @@
 package com.example.pizzamakerservice.repository;
 
-import com.example.pizzamakerservice.model.Table;
+import com.example.pizzamakerservice.model.Ingredient;
 
 import java.util.List;
 
-public class TableRepository {
-
-    public Table read(int id) {
+public class IngredientRepository {
+    
+    public Ingredient read(int id) {
         return null;
     }
 
-    public List<Table> readAll() {
+    public List<Ingredient> readAll() {
         return null;
     }
 
@@ -18,7 +18,7 @@ public class TableRepository {
 
     }
 
-    public Table update(int id, Table table) {
+    public Ingredient update(int id, Ingredient ingredient) {
         return null;
     }
 
