@@ -1,17 +1,26 @@
 package com.example.pizzamakerservice.service;
 
+
 import com.example.pizzamakerservice.model.Table;
+
 
 import java.util.List;
 
 public interface TableService {
-    Table  read(int id);
+    Table read(int id);
 
     List<Table> readAll();
 
-    void create();
+    List<Table> readByBusy(boolean isBusy);
 
-    Table update(int id,Table table);
+    List<Table> readBySeatCount(int seatCount);
 
-    void  delete (int id);
+
+    void create (Table table);
+
+    Table update(int id, Table table);
+
+    void delete (int id);
+
+
 }

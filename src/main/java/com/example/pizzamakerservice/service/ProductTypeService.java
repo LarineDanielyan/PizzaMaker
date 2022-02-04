@@ -7,14 +7,15 @@ import com.example.pizzamakerservice.model.ProductType;
 import java.util.List;
 
 public interface ProductTypeService {
-
-    ProductType read (int id);
+    ProductType read(int id);
 
     List<ProductType> readAll();
 
-    void create();
+    ProductType read(String name);
 
-    ProductType update (int id, ProductType productType);
+    void create(ProductType productType);
 
-    void delete (int id);
+    ProductType update(int id, ProductType productType);
+
+    void delete(int id);
 }
