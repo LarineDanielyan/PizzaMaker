@@ -2,7 +2,6 @@ package com.example.pizzamakerservice.service;
 
 import com.example.pizzamakerservice.model.Ingredient;
 
-
 import java.util.List;
 
 public interface IngredientService {

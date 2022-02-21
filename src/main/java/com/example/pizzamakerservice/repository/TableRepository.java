@@ -3,7 +3,6 @@ package com.example.pizzamakerservice.repository;
 import com.example.pizzamakerservice.model.Table;
 import com.example.pizzamakerservice.util.SQLConnector;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

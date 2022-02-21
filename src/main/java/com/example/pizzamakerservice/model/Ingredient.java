@@ -2,7 +2,6 @@ package com.example.pizzamakerservice.model;
 
 import lombok.*;
 
-import java.util.Objects;
 @Getter
 @Setter
 @ToString
@@ -10,7 +9,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ingredient {
-     private int id;
-     private String name;
+    private int id;
+    private String name;
 
 }

@@ -9,17 +9,17 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
-   private int id;
+    private int id;
 
-   private int tableId;
+    private int tableId;
 
-   private boolean inProcess;
+    private boolean inProcess;
 
-   private int productId;
+    private int productId;
 
-   private int quantity;
+    private int quantity;
 
-   private float amount;
+    private float amount;
 
 
 }

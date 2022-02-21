@@ -6,8 +6,9 @@ import com.example.pizzamakerservice.service.IngredientService;
 
 import java.util.List;
 
-public class IngredientServiceImpl  implements IngredientService {
+public class IngredientServiceImpl implements IngredientService {
     private final IngredientRepository ingredientRepository = new IngredientRepository();
+
     @Override
     public Ingredient read(int id) {
         return ingredientRepository.read(id);
@@ -26,7 +27,7 @@ public class IngredientServiceImpl  implements IngredientService {
 
     @Override
     public void create(Ingredient ingredient) {
-        if (ingredient==null){
+        if (ingredient == null) {
             return;
         }
         ingredient.setId(0);
@@ -35,7 +36,7 @@ public class IngredientServiceImpl  implements IngredientService {
 
     @Override
     public Ingredient update(int id, Ingredient ingredient) {
-        if (ingredientRepository.read(id)!=null){
+        if (ingredientRepository.read(id) != null) {
             ingredient.setId(id);
             return ingredientRepository.update(ingredient);
         }

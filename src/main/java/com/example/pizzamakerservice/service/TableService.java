@@ -3,7 +3,6 @@ package com.example.pizzamakerservice.service;
 
 import com.example.pizzamakerservice.model.Table;
 
-
 import java.util.List;
 
 public interface TableService {
@@ -16,11 +15,11 @@ public interface TableService {
     List<Table> readBySeatCount(int seatCount);
 
 
-    void create (Table table);
+    void create(Table table);
 
     Table update(int id, Table table);
 
-    void delete (int id);
+    void delete(int id);
 
 
 }

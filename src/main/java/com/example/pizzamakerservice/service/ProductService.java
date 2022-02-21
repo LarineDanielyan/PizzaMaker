@@ -1,10 +1,8 @@
 package com.example.pizzamakerservice.service;
 
 import com.example.pizzamakerservice.model.Product;
-import com.example.pizzamakerservice.model.Table;
 import com.example.pizzamakerservice.model.dto.ProductDto;
 
-import java.util.Collection;
 import java.util.List;
 
 public interface ProductService {

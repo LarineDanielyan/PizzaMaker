@@ -18,10 +18,10 @@ import java.util.stream.Collectors;
 
 public class ProductTypeController extends HttpServlet {
 
+    private static final Random random = new Random();
     private final ProductTypeService productTypeService = new ProductTypeServiceImpl();
-    private List<ProductType> list = new LinkedList<>();
-    private static Random random = new Random();
-    private Gson gson = new Gson();
+    private final List<ProductType> list = new LinkedList<>();
+    private final Gson gson = new Gson();
 
 
     @Override
@@ -52,6 +52,7 @@ public class ProductTypeController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        AccessControlOriginFilter.setAccessControlHeaders(resp);
         resp.getWriter().println("this is POST method");
 
         int id = list.get(list.size() - 1).getId() + 1;
@@ -66,6 +67,7 @@ public class ProductTypeController extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        AccessControlOriginFilter.setAccessControlHeaders(resp);
         System.out.println("desk");
         resp.getWriter().println("this is PUT method");
 
@@ -73,14 +75,14 @@ public class ProductTypeController extends HttpServlet {
 
         int id = Integer.parseInt(req.getParameter("id"));
 
-        for (int i = 0; i < list.size(); i++){
-            if(list.get(i).getId() == id){
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId() == id) {
                 pdtype = list.get(i);
                 break;
             }
         }
 
-        if(pdtype == null){
+        if (pdtype == null) {
             resp.sendError(400, "there is no table with mentioned id");
             return;
         }
@@ -93,6 +95,7 @@ public class ProductTypeController extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        AccessControlOriginFilter.setAccessControlHeaders(resp);
         resp.getWriter().println("this is a delete method");
 
         int delId = Integer.parseInt(req.getParameter("idToDelete"));

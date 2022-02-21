@@ -1,7 +1,6 @@
 package com.example.pizzamakerservice.repository;
 
 import com.example.pizzamakerservice.model.Ingredient;
-import com.example.pizzamakerservice.model.Table;
 import com.example.pizzamakerservice.util.SQLConnector;
 
 import java.sql.Connection;
@@ -25,19 +24,19 @@ public class IngredientRepository {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
-        Ingredient ingredient=null;
-        try{
-            while (resultSet.next()){
-                ingredient=mapper(resultSet);
+        Ingredient ingredient = null;
+        try {
+            while (resultSet.next()) {
+                ingredient = mapper(resultSet);
             }
-        }catch (SQLException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        try{
+        try {
             pstmt.close();
             resultSet.close();
             connection.close();
-        }catch (SQLException sqlException){
+        } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
         return ingredient;
@@ -51,25 +50,25 @@ public class IngredientRepository {
         ResultSet resultSet = null;
         try {
             pstmt = connection.prepareStatement("SELECT * FROM `ingredient` WHERE name=?");
-            pstmt.setString(1,name);
+            pstmt.setString(1, name);
             resultSet = pstmt.executeQuery();
 
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
-        Ingredient ingredient=null;
-        try{
-            while (resultSet.next()){
-                ingredient=mapper(resultSet);
+        Ingredient ingredient = null;
+        try {
+            while (resultSet.next()) {
+                ingredient = mapper(resultSet);
             }
-        }catch (SQLException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        try{
+        try {
             pstmt.close();
             resultSet.close();
             connection.close();
-        }catch (SQLException sqlException){
+        } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
         return ingredient;
@@ -102,7 +101,6 @@ public class IngredientRepository {
     }
 
 
-
     public void create(Ingredient ingredient) {
         Connection connection = SQLConnector.getConnection();
 
@@ -127,8 +125,8 @@ public class IngredientRepository {
         Connection connection = SQLConnector.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE `ingredient` SET name = ?,  WHERE id = ?");
-            preparedStatement.setString(1,ingredient.getName());
-            preparedStatement.setInt(2,ingredient.getId());
+            preparedStatement.setString(1, ingredient.getName());
+            preparedStatement.setInt(2, ingredient.getId());
 
             int i = preparedStatement.executeUpdate();
 

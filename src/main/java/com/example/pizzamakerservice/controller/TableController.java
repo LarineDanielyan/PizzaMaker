@@ -6,7 +6,6 @@ import com.example.pizzamakerservice.service.impl.TableServiceImpl;
 import com.example.pizzamakerservice.util.AccessControlOriginFilter;
 import com.google.gson.Gson;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -59,12 +58,14 @@ public class TableController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        AccessControlOriginFilter.setAccessControlHeaders(resp);
         Table table = mapper(req);
         tableService.create(table);
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        AccessControlOriginFilter.setAccessControlHeaders(resp);
         Table table = mapper(req);
         int id = table.getId();
         resp.
@@ -74,6 +75,7 @@ public class TableController extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        AccessControlOriginFilter.setAccessControlHeaders(resp);
         int id = Integer.parseInt(req.getParameter("id"));
         tableService.delete(id);
 

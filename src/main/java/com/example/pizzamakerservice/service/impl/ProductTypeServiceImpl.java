@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ProductTypeServiceImpl implements ProductTypeService {
 
-    private final ProductTypeRepository productTypeRepository =new ProductTypeRepository();
+    private final ProductTypeRepository productTypeRepository = new ProductTypeRepository();
 
     @Override
     public ProductType read(int id) {

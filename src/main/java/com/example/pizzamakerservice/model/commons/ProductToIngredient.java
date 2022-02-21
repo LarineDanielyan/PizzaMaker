@@ -1,6 +1,7 @@
 package com.example.pizzamakerservice.model.commons;
 
 import lombok.*;
+
 @Getter
 @Setter
 @EqualsAndHashCode
